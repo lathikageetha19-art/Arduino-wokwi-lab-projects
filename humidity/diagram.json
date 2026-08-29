@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Arvind Patil",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 126.67, "left": 59.33, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -77.06,
+      "left": -101.33,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 77.1,
+      "left": 388.2,
+      "attrs": { "humidity": "81.5", "temperature": "10.3" }
+    },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": -159, "left": 297.7, "attrs": {} },
+    { "type": "board-ssd1306", "id": "oled1", "top": 127.94, "left": -143.77, "attrs": {} }
+  ],
+  "connections": [
+    [ "rtc1:GND", "dht1:GND", "black", [ "h-13.67", "v105.9", "h154.67" ] ],
+    [ "rtc1:5V", "dht1:VCC", "red", [ "h-5", "v76.57" ] ],
+    [ "lcd1:GND", "uno:GND.1", "black", [ "h-17", "v154.03", "h279.33" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-5", "v157.86", "h261.33" ] ],
+    [ "dht1:VCC", "uno:VIN", "red", [ "v164.97", "h-94.6", "v18.67" ] ],
+    [ "dht1:SDA", "uno:2", "white", [ "v48.97", "h-46.1", "v-6" ] ],
+    [ "dht1:GND", "uno:GND.1", "black", [ "v34.3", "h-161.4" ] ],
+    [ "lcd1:SDA", "uno:A4.2", "white", [ "h-11", "v119.03", "h254.67" ] ],
+    [ "lcd1:SCL", "uno:A5.2", "magenta", [ "h6.33", "v94.19", "h216" ] ],
+    [ "rtc1:SDA", "uno:A4", "white", [ "h-15.67", "v117.74", "h67.33" ] ],
+    [ "rtc1:SCL", "uno:A5", "magenta", [ "h-9", "v87.57", "h82.67" ] ],
+    [ "oled1:GND", "uno:GND.2", "black", [ "v-12.37", "h-49.68", "v106", "h324.67", "v78" ] ],
+    [ "oled1:VCC", "uno:VIN", "red", [ "v-31.04", "h86.21" ] ],
+    [ "oled1:SCL", "uno:A5", "magenta", [ "h105.9", "v183.77" ] ],
+    [ "oled1:SDA", "uno:A4", "white", [ "h67.27", "v152.3", "h314.93" ] ]
+  ],
+  "dependencies": {}
+}

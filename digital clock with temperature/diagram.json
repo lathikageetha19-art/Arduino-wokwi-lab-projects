@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 96.6, "left": -67.8, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -176,
+      "left": -90.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 144.3,
+      "left": 474.6,
+      "attrs": { "temperature": "24.8", "humidity": "60" }
+    },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": 177, "left": 316.9, "attrs": {} }
+  ],
+  "connections": [
+    [ "lcd1:GND", "uno:GND.2", "black", [ "h-230.4", "v499.2", "h422.4" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-220.8", "v480.1", "h57.6" ] ],
+    [ "lcd1:SDA", "uno:A4.2", "green", [ "h-28.8", "v192.2", "h134.4" ] ],
+    [ "lcd1:SCL", "uno:A5.2", "green", [ "h-48", "v192.3", "h153.6" ] ],
+    [ "rtc1:GND", "uno:GND.2", "black", [ "h-57.6", "v163.2", "h-172.8" ] ],
+    [ "rtc1:5V", "uno:5V", "red", [ "h-67.2", "v143.6", "h-163.2" ] ],
+    [ "dht1:VCC", "uno:5V", "red", [ "v134.4", "h-403.2" ] ],
+    [ "dht1:GND", "uno:GND.2", "black", [ "v96", "h-412.8" ] ],
+    [ "dht1:SDA", "uno:2", "yellow", [ "v57.6", "h-278.3", "v-249.6", "h-48" ] ],
+    [ "rtc1:SCL", "uno:A5", "gray", [ "h-38.4", "v105.4", "h-105.6" ] ],
+    [ "rtc1:SDA", "uno:A4", "cyan", [ "h-86.4", "v124.5", "h-67.2" ] ]
+  ],
+  "dependencies": {}
+}
